@@ -7,7 +7,7 @@ def sgl_linked_list_init
   p test_list
 end
 
-# Testing the insert function of a singly linked list
+# Testing the insert method of a singly linked list
 def testcase_insert
   test_list = sgl_linked_list_init
   # Inserting a new node with data = 3
@@ -21,7 +21,7 @@ def testcase_insert
   test_list.display
   p test_list
 
-  # Raise exceptions for insert function
+  # Raise exceptions for insert method
   raise unless test_list.head.data == 3
   raise unless test_list.head.next.next == test_list.tail
   raise unless test_list.tail.data == 12
@@ -30,7 +30,7 @@ def testcase_insert
 end
 
 
-# Testing the remove function of a singly linked list
+# Testing the remove method of a singly linked list
 def testcase_remove
   test_list = sgl_linked_list_init
   test_list.insert(3)
@@ -43,12 +43,43 @@ def testcase_remove
   # # Removing a node that is not in the list = 1
   # test_list.remove(1)
 
-  # Displaying the singly test list with removeed data
+  # Displaying the singly test list with removed data
   test_list.display
   p test_list
 
-  # Raise exceptions for remove function
+  # Raise exceptions for remove method
 end
 
+def testcase_cat
+  test_list1 = sgl_linked_list_init
+  test_list1.insert(3)
+  test_list1.insert(24)
+  test_list1.insert(12)
+  puts '__ List 1'
+  test_list1.display
+
+  test_list2 = sgl_linked_list_init
+  test_list2.insert(5)
+  test_list2.insert(108)
+  puts '__ List 2'
+  test_list2.display
+
+  test_list1.cat(test_list2)
+  cat_test_list = test_list1
+  puts '__ Concatenated List'
+  cat_test_list.display
+  p cat_test_list
+
+  # Raise exceptions for concatenate method
+  raise unless cat_test_list.head.data == 3
+  raise unless cat_test_list.length == 5
+  raise unless cat_test_list.tail.data == 108
+  raise unless cat_test_list.tail.next.nil?
+end
+
+puts '>> Insert Test Case'
 testcase_insert
+puts '>> Remove Test Case'
 testcase_remove
+puts '>> Cancatenate 2 Lists Test Case'
+testcase_cat
