@@ -34,6 +34,7 @@ end
 def testcase_remove
   test_list = sgl_linked_list_init
   test_list.insert(3)
+  test_list.insert(8)
   test_list.insert(24)
   test_list.insert(5)
   test_list.insert(12)
@@ -43,8 +44,8 @@ def testcase_remove
   puts ''
   # Removing the head node with data = 3
   test_list.remove(3)
-  # # Removing the middle node with data = 24
-  # test_list.remove(24)
+  # Removing the middle node with data = 24
+  test_list.remove(24)
   # # Removing a node that is not in the list = 1
   # test_list.remove(1)
 

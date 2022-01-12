@@ -45,7 +45,7 @@ class SinglyLinkedList
   # Method to remove given data from the linked list and adjust pointers to keep the elements together
   def remove(data)
     # If data is head of the list
-    if data == @head
+    if data == @head.data
       @head = if @head.next.nil?
                 #-- set head and tail to nil if head is the only data in the list
                 @tail = nil
