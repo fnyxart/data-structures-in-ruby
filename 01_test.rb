@@ -35,18 +35,24 @@ def testcase_remove
   test_list = sgl_linked_list_init
   test_list.insert(3)
   test_list.insert(24)
+  test_list.insert(5)
   test_list.insert(12)
-  # # Removing the node with data = 3 (head)
-  # test_list.remove(3)
-  # Removing the node with data = 12 (tail)
-  test_list.remove(24)
+  puts '__ List created'
+  test_list.display
+  p test_list
+  puts ''
+  # Removing the head node with data = 3
+  test_list.remove(3)
+  # # Removing the middle node with data = 24
+  # test_list.remove(24)
   # # Removing a node that is not in the list = 1
   # test_list.remove(1)
 
+  puts '__ Removed node 3 and 24'
   # Displaying the singly test list with removed data
   test_list.display
   p test_list
-
+  puts ''
   # Raise exceptions for remove method
 end
 
@@ -81,5 +87,5 @@ puts '>> Insert Test Case'
 testcase_insert
 puts '>> Remove Test Case'
 testcase_remove
-puts '>> Cancatenate 2 Lists Test Case'
-testcase_cat
+# puts '>> Cancatenate 2 Lists Test Case'
+# testcase_cat
