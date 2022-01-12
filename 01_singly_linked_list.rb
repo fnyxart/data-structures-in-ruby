@@ -71,6 +71,8 @@ class SinglyLinkedList
         # Reduce the length counter of the list
         @length -= 1
       end
+      # If data is in the tail node, reassign the tail to be the pre_node
+      @tail = pre_node if @tail.data == data
     end
   end
 
