@@ -46,10 +46,10 @@ def testcase_remove
   test_list.remove(3)
   # Removing the middle node with data = 24
   test_list.remove(24)
-  # # Removing a node that is not in the list = 1
-  # test_list.remove(1)
+  # Removing a node that is not in the list = 1
+  test_list.remove(1)
 
-  puts '__ Removed node 3 and 24'
+  puts '__ Removed node 3(head), 24(middle) and 1(not in list)'
   # Displaying the singly test list with removed data
   test_list.display
   p test_list

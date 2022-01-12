@@ -53,20 +53,25 @@ class SinglyLinkedList
                 #-- otherwise set the next data to be head
                 @head.next
               end
+      @length -= 1
     # If data is not head of the list
     else
       # Set the pre_node variable to be the head
       pre_node = @head
       # Loop through the list while there is a pre_node and pre_node.next and they are not the data
-      while pre_node && pre_node.next.data != data
+      while pre_node.next && pre_node.next.data != data
         pre_node = pre_node.next
       end
       # (Breaks with pre_node = preceding data of the data to be removed)
-      # Set the next pointer of pre_node to the next pointer of the data to be removed
-      pre_node.next = pre_node.next.next if pre_node
+      # If not found
+      not_in_list = pre_node.next.nil?
+      unless not_in_list
+        # Set the next pointer of pre_node to the next pointer of the data to be removed
+        pre_node.next = pre_node.next.next
+        # Reduce the length counter of the list
+        @length -= 1
+      end
     end
-    # Reduce the length counter of the list
-    @length -= 1
   end
 
   # Method to join two lists, O(1)
