@@ -1,6 +1,7 @@
 # TODO
-# * Remove Method - Fix next pointer of prev_node remaining after removing data
-# * Cat Method - Fix head and tail variables
+# * Remove & Cat Method - Testcase: list is empty
+# * Remove - Testcase: only head in list
+
 
 ## Single-linked list data structure
 class SinglyLinkedList
@@ -78,10 +79,9 @@ class SinglyLinkedList
 
   # Method to join two lists, O(1)
   def cat(list)
-    return nil unless list
-
     # Set the next pointer of the tail of 1st list to head of 2nd list
     @tail.next = list.head
+    @tail = list.tail
     # Add the new list length to the length counter
     @length += list.length
   end
