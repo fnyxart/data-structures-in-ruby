@@ -1,5 +1,4 @@
 # TODO
-# * Cat Method - Testcase: list is empty
 # * Remove - Testcase: only head in list
 
 
@@ -82,11 +81,16 @@ class SinglyLinkedList
 
   # Method to join two lists, O(1)
   def cat(list)
-    # Set the next pointer of the tail of 1st list to head of 2nd list
-    @tail.next = list.head
-    @tail = list.tail
-    # Add the new list length to the length counter
-    @length += list.length
+    # If one or bosth lists are empty - inform the developer
+    if (@head.nil? && @tail.nil?) || (list.head.nil? && list.tail.nil?)
+      puts 'One or both lists are empty - you cannot perform this action'
+    else
+      # Set the next pointer of the tail of 1st list to head of 2nd list
+      @tail.next = list.head
+      @tail = list.tail
+      # Add the new list length to the length counter
+      @length += list.length
+    end
   end
 end
 

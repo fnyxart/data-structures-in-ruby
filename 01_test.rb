@@ -34,7 +34,6 @@ def testcase_insert
   raise unless test_list.length == 3
 end
 
-
 # Testing the remove method of a singly linked list
 def testcase_remove
   test_list = sgl_linked_list_init
@@ -60,7 +59,7 @@ def testcase_remove
   # Displaying the singly test list with removed data
   test_list.display
   p test_list
-  puts ''
+
   # Raise exceptions for remove method
   raise unless test_list.head.data == 8
   raise unless test_list.length == 2
@@ -69,13 +68,25 @@ def testcase_remove
   raise unless test_list.tail.next.nil?
 end
 
+# Testing the remove and concatenating methods on empty list
 def testcase_rem_cat_empty_list
   test_list = sgl_linked_list_init
+  puts "List 1 - #{test_list}"
+  test_list2 = sgl_linked_list_init
+  puts "List 2 - #{test_list2}"
+  test_list3 = sgl_linked_list_init
+  test_list3.insert(3)
+  puts '__ Added node with 3 in List 3'
+  test_list3.display
+  p test_list3
   puts ''
-  # test_list2 = sgl_linked_list_init
-  puts '__ Removing node with data 20 from empty list'
+  puts '__ Removing node with data 20 from empty list 1'
   # Trying to remove a node from an empty list
   test_list.remove(20)
+  puts '__ Concatenating empty list 1 and empty list 2'
+  test_list.cat(test_list2)
+  puts '__ Concatenating list 3 and empty list 2'
+  test_list3.cat(test_list2)
 end
 
 def testcase_cat
@@ -91,6 +102,7 @@ def testcase_cat
   test_list2.insert(108)
   puts '__ List 2'
   test_list2.display
+  puts ''
 
   test_list1.cat(test_list2)
   cat_test_list = test_list1
@@ -105,11 +117,15 @@ def testcase_cat
   raise unless cat_test_list.tail.next.nil?
 end
 
-# puts '>> Insert Test Case'
-# testcase_insert
-# puts '>> Remove Test Case'
-# testcase_remove
-# puts '>> Cancatenate 2 Lists Test Case'
-# testcase_cat
+puts '>> Insert Test Case'
+testcase_insert
+puts ''
+puts '>> Remove Test Case'
+testcase_remove
+puts ''
+puts '>> Cancatenate 2 Lists Test Case'
+testcase_cat
+puts ''
 puts '>> Remove from and Cancatenate an Empty List Test Case'
 testcase_rem_cat_empty_list
+puts ''
