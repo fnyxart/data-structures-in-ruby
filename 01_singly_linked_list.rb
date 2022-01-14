@@ -92,6 +92,11 @@ class SinglyLinkedList
       @length += list.length
     end
   end
+
+  # Method for removing all elements of list O(n)
+  def clear
+    remove(@head.data) while @length.positive?
+  end
 end
 
 ## Node; used in a singly linked list class

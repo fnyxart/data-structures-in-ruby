@@ -117,6 +117,21 @@ def testcase_cat
   raise unless cat_test_list.tail.next.nil?
 end
 
+def testcase_clear
+test_list = sgl_linked_list_init
+  test_list.insert(3)
+  test_list.insert(5)
+  test_list.insert(12)
+  puts '__ List created'
+  test_list.display
+  p test_list
+  puts ''
+  test_list.clear
+  puts '__ List cleared'
+  p test_list
+  puts ''
+end
+
 puts '>> Insert Test Case'
 testcase_insert
 puts ''
@@ -128,4 +143,7 @@ testcase_cat
 puts ''
 puts '>> Remove from and Cancatenate an Empty List Test Case'
 testcase_rem_cat_empty_list
+puts ''
+puts '>> Clear List Test Case'
+testcase_clear
 puts ''
