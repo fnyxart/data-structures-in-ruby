@@ -1,5 +1,5 @@
 # TODO
-# * Remove & Cat Method - Testcase: list is empty
+# * Cat Method - Testcase: list is empty
 # * Remove - Testcase: only head in list
 
 
@@ -45,8 +45,11 @@ class SinglyLinkedList
   # Since we may have to traverse the whole list to remove the data, the complexity of this method is O(n)
   # Method to remove given data from the linked list and adjust pointers to keep the elements together
   def remove(data)
+    # If list is empty - inform the developer
+    if @head.nil? && @tail.nil?
+      puts 'List is empty - you cannot perform this action'
     # If data is head of the list
-    if data == @head.data
+    elsif data == @head.data
       @head = if @head.next.nil?
                 #-- set head and tail to nil if head is the only data in the list
                 @tail = nil

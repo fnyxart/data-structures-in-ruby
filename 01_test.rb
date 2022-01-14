@@ -6,7 +6,6 @@ def sgl_linked_list_init
   puts 'Initiating a Singly Linked List instance'
   test_list = SinglyLinkedList.new
   p test_list
-  puts ''
 end
 
 # Testing the insert method of a singly linked list
@@ -70,6 +69,15 @@ def testcase_remove
   raise unless test_list.tail.next.nil?
 end
 
+def testcase_rem_cat_empty_list
+  test_list = sgl_linked_list_init
+  puts ''
+  # test_list2 = sgl_linked_list_init
+  puts '__ Removing node with data 20 from empty list'
+  # Trying to remove a node from an empty list
+  test_list.remove(20)
+end
+
 def testcase_cat
   test_list1 = sgl_linked_list_init
   test_list1.insert(3)
@@ -97,9 +105,11 @@ def testcase_cat
   raise unless cat_test_list.tail.next.nil?
 end
 
-puts '>> Insert Test Case'
-testcase_insert
-puts '>> Remove Test Case'
-testcase_remove
-puts '>> Cancatenate 2 Lists Test Case'
-testcase_cat
+# puts '>> Insert Test Case'
+# testcase_insert
+# puts '>> Remove Test Case'
+# testcase_remove
+# puts '>> Cancatenate 2 Lists Test Case'
+# testcase_cat
+puts '>> Remove from and Cancatenate an Empty List Test Case'
+testcase_rem_cat_empty_list
